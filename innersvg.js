@@ -51,7 +51,7 @@ var serializeXML = function(node, output) {
   }
 }
 
-if (!('innerHTML' in SVGElement)) {
+if (!('innerHTML' in SVGElement.prototype)) {
   // The innerHTML DOM property for SVGElement.
   Object.defineProperty(SVGElement.prototype, 'innerHTML', {
     get: function () {
@@ -91,7 +91,7 @@ if (!('innerHTML' in SVGElement)) {
   });
 }
 
-if (!('innerSVG' in SVGElement)) {
+if (!('innerSVG' in SVGElement.prototype)) {
   // The innerSVG DOM property for SVGElement.
   Object.defineProperty(SVGElement.prototype, 'innerSVG', {
     get: function() {
